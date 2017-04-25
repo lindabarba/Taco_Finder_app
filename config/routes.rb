@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  root 'users#index'
+  root 'tacospots#index'
   resources :users
   resources :tacospots do
     resources :comments, shallow: true

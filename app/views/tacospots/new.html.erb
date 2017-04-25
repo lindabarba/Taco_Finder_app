@@ -1,2 +1,5 @@
-<h1>Tacospots#new</h1>
-<p>Find me in app/views/tacospots/new.html.erb</p>
+<h1>New Taco Spot</h1>
+
+<%= render 'form', tacospot: @tacospot %>
+
+<%= link_to 'Back', tacospots_path %>
