@@ -1,0 +1,2 @@
+module TacospotsHelper
+end
