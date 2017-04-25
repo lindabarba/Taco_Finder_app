@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   resources :users
   resources :tacospots do
     resources :comments, shallow: true
+  end
   resources :sessions, only: [:new, :create, :destroy]
   get '/login', to: 'sessions#new'
   get '/logout', to: 'sessions#destroy'

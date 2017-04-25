@@ -1,5 +1,31 @@
-<h1>New Taco Spot</h1>
+<h1>Add new Taco Spot!</h1>
 
-<%= render 'form', tacospot: @tacospot %>
+<div>
+<%= form_for [@tacospot], html: { multipart: true } do |form| %>
+   <%= form.label :name %>
+   <%= form.text_field :name %><br>
 
-<%= link_to 'Back', tacospots_path %>
+   <%= form.label :street_address %>
+   <%= form.text_field :street_address %><br>
+
+   <%= form.label :city %>
+   <%= form.text_field :city %><br>
+
+   <%= form.label :state %>
+   <%= form.text_field :state %><br>
+
+   <%= form.label :zip %>
+   <%= form.number_field :zip %><br>
+
+   <%= form.label :hours %>
+   <%= form.text_field :hours %><br>
+
+   <%= form.label :cash_only %>
+   <%= form.text_field :cash_only %><br>
+
+   <%= form.label :image_url %>
+   <%= form.text_field :image_url %><br>
+
+   <%= form.submit "Done" %>
+<% end %>
+</div>

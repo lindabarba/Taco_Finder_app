@@ -4,6 +4,7 @@ class TacospotsController < ApplicationController
 
   def index
     @tacospots = Tacospot.all
+    @users = User.all
   end
 
   def show
@@ -13,48 +14,39 @@ class TacospotsController < ApplicationController
     @tacospot = Tacospot.new
   end
 
-  def edit
-  end
-
   def create
     @tacospot = Tacospot.new(tacospot_params)
-
-    respond_to do |format|
-      if @tacospot.save
-        format.html { redirect_to @tacospot, notice: 'Taco Spot was successfully created.' }
-        format.json { render :show, status: :created, location: @tacospot }
-      else
-        format.html { render :new }
-        format.json { render json: @tacospot.errors, status: :unprocessable_entity }
-      end
+    if @tacospot.save
+      redirect_to root_path
+    else
+      render :new
     end
   end
 
+  def edit
+    @tacospot = Tacospot.find(params[:id])
+  end
+
   def update
-    respond_to do |format|
-      if @tacospot.update(tacospot_params)
-        format.html { redirect_to @tacospot, notice: 'Taco Spot was successfully updated.' }
-        format.json { render :show, status: :ok, location: @tacospot }
-      else
-        format.html { render :edit }
-        format.json { render json: @tacospot.errors, status: :unprocessable_entity }
-      end
+    @tacospot = Tacospot.find(params[:id])
+    if @tacospot.update_attributes(tacospot_params)
+      redirect_to root_path
+    else
+      render :edit
     end
   end
 
   def destroy
+    @tacospot = Tacospot.find(params[:id])
     @tacospot.destroy
-    respond_to do |format|
-      format.html { redirect_to tacospots_url, notice: 'Taco Spot was successfully deleted.' }
-      format.json { head :no_content }
-    end
+    redirect_to root_path
   end
 
   private
 
-    def set_tacospot
-      @tacospot = Tacospot.find(params[:id])
-    end
+    # def set_tacospot
+    #   @tacospot = Tacospot.find(params[:id])
+    # end
 
     def tacospot_params
       params.require(:tacospot).permit(:name, :street_address, :city, :state, :zip, :hours, :cash_only, :image_url)
