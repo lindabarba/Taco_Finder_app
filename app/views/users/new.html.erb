@@ -1,15 +1,15 @@
 <h1>Care to join?</h1>
-<%= form_for @user do |f| %>
-  <% if @user.errors.any? %>
-    <div class="error_messages">
-      <h2>How did you mess this up?</h2>
-      <ul>
-        <% for message in @user.errors.full_messages %>
-          <li><%= message %></li>
-        <% end %>
-      </ul>
-    </div>
-  <% end %>
+  <%= form_for @user do |f| %>
+    <% if @user.errors.any? %>
+      <div class="error_messages">
+        <h2>How did you mess this up?</h2>
+        <ul>
+          <% for message in @user.errors.full_messages %>
+            <li><%= message %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
   <div class="field">
     <%= f.label :name %>
     <%= f.text_field :name %>
