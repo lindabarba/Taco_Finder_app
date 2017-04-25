@@ -1,0 +1,2 @@
+class Tacospot < ApplicationRecord
+end
