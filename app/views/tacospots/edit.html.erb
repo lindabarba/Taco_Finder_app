@@ -1,2 +1,47 @@
-<h1>Tacospots#edit</h1>
-<p>Find me in app/views/tacospots/edit.html.erb</p>
+<h1>Fix up a Taco Spot</h1>
+
+<%= form_for @tacospot do |f| %>
+   <div class="field">
+      <%= f.label :name %>
+      <%= f.text_field :name %><br>
+   </div>
+
+   <div class="field">
+      <%= f.label :street_address %>
+      <%= f.text_field :street_address %><br>
+   </div>
+
+   <div class="field">
+      <%= f.label :city %>
+      <%= f.text_field :city %><br>
+   </div>
+
+   <div class="field">
+      <%= f.label :state %>
+      <%= f.text_field :state %><br>
+   </div>
+
+   <div class="field">
+      <%= f.label :zip %>
+      <%= f.number_field :zip %><br>
+   </div>
+
+   <div class="field">
+      <%= f.label :hours %>
+      <%= f.text_field :hours %><br>
+   </div>
+
+   <div class="field">
+      <%= f.label :cash_only %>
+      <%= f.text_field :cash_only %><br>
+   </div>
+
+   <div class="field">
+      <%= f.label :image_url %>
+      <%= f.text_field :image_url %><br>
+   </div>
+
+   <div class="actions"><%= f.submit "Fix this Taco Spot!" %></div>
+   <% end %>
+
+<%= link_to "Just kidding, Taco Spot is all good.", root_path %>

@@ -13,13 +13,15 @@
       <% if current_user %>
         Welcome, <%= current_user.name %>
         &nbsp;&nbsp;|&nbsp;&nbsp;
-        <%= link_to 'Log Out', session_path('dummy'), method: :delete %>
+        <%= link_to 'Log Out', session_path('dummy'), method: :delete %><br>
+        <p><%= link_to 'New Taco', new_tacospot_path %></p>
       <% else %>
         <%= link_to 'Log In', login_path %>
         &nbsp;&nbsp;|&nbsp;&nbsp;
         <%= link_to 'Sign Up', new_user_path %>
       <% end %>
     </p>
+    <p><%= link_to 'Home', root_path %></p>
     <%= yield %>
   </body>
 </html>

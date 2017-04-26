@@ -1,31 +1,45 @@
 <h1>Add new Taco Spot!</h1>
 
-<div>
-<%= form_for [@tacospot], html: { multipart: true } do |form| %>
-   <%= form.label :name %>
-   <%= form.text_field :name %><br>
+   <%= form_for @tacospot do |f| %>
+   <div class="field">
+      <%= f.label :name %>
+      <%= f.text_field :name %><br>
+   </div>
 
-   <%= form.label :street_address %>
-   <%= form.text_field :street_address %><br>
+   <div class="field">
+      <%= f.label :street_address %>
+      <%= f.text_field :street_address %><br>
+   </div>
 
-   <%= form.label :city %>
-   <%= form.text_field :city %><br>
+   <div class="field">
+      <%= f.label :city %>
+      <%= f.text_field :city %><br>
+   </div>
 
-   <%= form.label :state %>
-   <%= form.text_field :state %><br>
+   <div class="field">
+      <%= f.label :state %>
+      <%= f.text_field :state %><br>
+   </div>
 
-   <%= form.label :zip %>
-   <%= form.number_field :zip %><br>
+   <div class="field">
+      <%= f.label :zip %>
+      <%= f.number_field :zip %><br>
+   </div>
 
-   <%= form.label :hours %>
-   <%= form.text_field :hours %><br>
+   <div class="field">
+      <%= f.label :hours %>
+      <%= f.text_field :hours %><br>
+   </div>
 
-   <%= form.label :cash_only %>
-   <%= form.text_field :cash_only %><br>
+   <div class="field">
+      <%= f.label :cash_only %>
+      <%= f.text_field :cash_only %><br>
+   </div>
 
-   <%= form.label :image_url %>
-   <%= form.text_field :image_url %><br>
+   <div class="field">
+      <%= f.label :image_url %>
+      <%= f.text_field :image_url %><br>
+   </div>
 
-   <%= form.submit "Done" %>
-<% end %>
-</div>
+   <div class="actions"><%= f.submit "Done" %></div>
+   <% end %>
