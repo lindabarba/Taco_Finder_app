@@ -1,0 +1,16 @@
+<h1><%= @tacospot.name %></h1>
+
+<tr>
+  <td><%= @tacospot.name %></td><br>
+  <td><%= @tacospot.street_address %>, </td><br>
+  <td><%= @tacospot.city %>, </td>
+  <td><%= @tacospot.state %>, </td>
+  <td><%= @tacospot.zip %></td><br>
+  <td>Hours: <%= @tacospot.hours %></td>&nbsp;|&nbsp;
+  <td>Cash only: <%= @tacospot.cash_only %></td><br>
+  <td><%= @tacospot.image_url %></td><br>
+  <td><%= link_to 'Edit', edit_tacospot_path, method: :delete, data: { confirm: 'Are you sure?' } if current_user %></td><br>
+  <td><%= link_to 'Destroy', tacospot_path, method: :delete, data: { confirm: 'Are you sure?' } if current_user %></td><br>
+</tr>
+
+<%= link_to "Show me ALL the Taco Spots!", tacospots_path %>

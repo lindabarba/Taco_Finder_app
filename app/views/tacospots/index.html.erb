@@ -2,7 +2,7 @@
 
 <% @tacospots.each do |tacospot| %>
 <tr>
-  <td><%= tacospot.name %></td><br>
+  <td><%= link_to tacospot.name, tacospot_path(tacospot) %></td><br>
   <td><%= tacospot.street_address %>, </td><br>
   <td><%= tacospot.city %>, </td>
   <td><%= tacospot.state %>, </td>
@@ -10,7 +10,7 @@
   <td>Hours: <%= tacospot.hours %></td>&nbsp;|&nbsp;
   <td>Cash only: <%= tacospot.cash_only %></td><br>
   <td><%= tacospot.image_url %></td><br>
-  <td><%= link_to 'Edit', edit_tacospot_path(tacospot) %></td><br>
+  <td><%= link_to 'Edit', edit_tacospot_path(tacospot), method: :delete, data: { confirm: 'Are you sure?' } if current_user %></td><br>
   <td><%= link_to 'Destroy', tacospot_path(tacospot), method: :delete, data: { confirm: 'Are you sure?' } if current_user %></td>
 </tr>
 <br>

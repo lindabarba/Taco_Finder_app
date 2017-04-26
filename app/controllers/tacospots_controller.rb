@@ -8,6 +8,7 @@ class TacospotsController < ApplicationController
   end
 
   def show
+    @tacospot = Tacospot.find(params[:id])
   end
 
   def new
@@ -22,7 +23,6 @@ class TacospotsController < ApplicationController
       redirect_to root_path
     else
       render :new
-      # redirect_to root_path
     end
   end
 
