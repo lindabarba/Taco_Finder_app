@@ -18,7 +18,6 @@ class TacospotsController < ApplicationController
   def create
     @tacospot = Tacospot.new(tacospot_params)
     if @tacospot.save
-      session[:tacospot_id] = @tacospot.id
       flash[:notice] = 'New Taco Spot!'
       redirect_to root_path
     else
