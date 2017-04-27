@@ -37,6 +37,9 @@ gem "aws-sdk", "~> 2"
 gem "paperclip", "~> 5.0.0"
 gem "figaro"
 
+# materialize gem
+gem 'materialize-sass'
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 

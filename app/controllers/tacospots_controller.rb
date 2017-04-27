@@ -33,7 +33,7 @@ class TacospotsController < ApplicationController
   def update
     @tacospot = Tacospot.find(params[:id])
     if @tacospot.update_attributes(tacospot_params)
-      redirect_to root_path
+      redirect_to tacospot_path
     else
       render :edit
     end
@@ -42,7 +42,7 @@ class TacospotsController < ApplicationController
   def destroy
     @tacospot = Tacospot.find(params[:id])
     @tacospot.destroy
-    redirect_to root_path
+    redirect_to tacospots_path
   end
 
 private

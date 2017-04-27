@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>TacoFinderApp</title>
+    <title>Taco Finder</title>
     <%= stylesheet_link_tag "https://fonts.googleapis.com/icon?family=Material+Icons" %>
     <%= csrf_meta_tags %>
 
@@ -11,19 +11,34 @@
   </head>
 
   <body>
-    <p>
-      <% if current_user %>
-        Welcome, <%= current_user.name %>
-        &nbsp;&nbsp;|&nbsp;&nbsp;
-        <%= link_to 'Log Out', session_path('dummy'), method: :delete %><br>
-        <p><%= link_to 'New Taco', new_tacospot_path %></p>
-      <% else %>
-        <%= link_to 'Log In', login_path %>
-        &nbsp;&nbsp;|&nbsp;&nbsp;
-        <%= link_to 'Sign Up', new_user_path %>
-      <% end %>
-    </p>
-    <p><%= link_to 'Home', root_path %></p>
-    <%= yield %>
+    <div class="navbar-fixed">
+      <nav>
+        <div class="nav-wrapper">
+          <a href="/" class="brand-logo"><i class="material-icons">sentiment_very_satisfied</i>Taco Finder</a>
+          <ul class="right hide-on-med-and-down">
+            <li><a href="sass.html">Sass</a></li>
+            <li><a href="badges.html">Components</a></li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+    <div class="container">
+      <p>
+        <% if current_user %>
+          Welcome, <%= current_user.name %>
+          &nbsp;&nbsp;|&nbsp;&nbsp;
+          <%= link_to 'I no longer want you to know who I am', session_path('dummy'), method: :delete %><br>
+          <p><%= link_to 'Tell us about a new taco spot.', new_tacospot_path %></p>
+        <% else %>
+          <%= link_to 'Enter Taco Finder', login_path %>
+          &nbsp;&nbsp;|&nbsp;&nbsp;
+          <%= link_to 'Join Taco Finder', new_user_path %>
+        <% end %>
+      </p>
+      <p><%= link_to 'Taco Finder', root_path %></p>
+      <%= yield %>
+    </div>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script type="text/javascript" src="js/materialize.min.js"></script>
   </body>
 </html>

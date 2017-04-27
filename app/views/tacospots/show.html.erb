@@ -9,8 +9,8 @@
   <td>Hours: <%= @tacospot.hours %></td>&nbsp;|&nbsp;
   <td>Cash only: <%= @tacospot.cash_only %></td><br>
   <td><%= @tacospot.image_url %></td><br>
-  <td><%= link_to 'Edit', edit_tacospot_path, method: :delete, data: { confirm: 'Are you sure?' } if current_user %></td><br>
-  <td><%= link_to 'Destroy', tacospot_path, method: :delete, data: { confirm: 'Are you sure?' } if current_user %></td><br>
+  <td><%= link_to 'Fix up this taco spot.', edit_tacospot_path(@tacospot) if current_user %></td><br>
+  <td><%= link_to 'This taco spot no longer exists.', tacospot_path, method: :delete, data: { confirm: 'Are you sure?' } if current_user %></td><br>
 </tr>
 
-<%= link_to "Show me ALL the Taco Spots!", tacospots_path %>
+<%= link_to "Show me ALL the tacos found!", tacospots_path %>
