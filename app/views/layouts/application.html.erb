@@ -15,10 +15,14 @@
       <nav>
         <div class="nav-wrapper">
           <a href="/" class="brand-logo"><i class="material-icons">sentiment_very_satisfied</i>Taco Finder</a>
-          <ul class="right hide-on-med-and-down">
-            <li><a href="sass.html">Sass</a></li>
-            <li><a href="badges.html">Components</a></li>
-          </ul>
+          <form>
+            <div class="input-field">
+              <input id="search" type="search" required>
+              <label class="label-icon" for="search"><i class="material-icons">search</i>
+              </label>
+              <i class="material-icons">close</i>
+            </div>
+          </form>
         </div>
       </nav>
     </div>
@@ -35,7 +39,7 @@
           <%= link_to 'Join Taco Finder', new_user_path %>
         <% end %>
       </p>
-      <p><%= link_to 'Taco Finder', root_path %></p>
+      <p><%= link_to 'Show me all the Tacos', tacospots_path %></p>
       <%= yield %>
     </div>
     <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>

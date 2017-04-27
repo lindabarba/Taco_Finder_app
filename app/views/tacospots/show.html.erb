@@ -24,5 +24,3 @@
   <td><%= link_to 'Fix up this taco spot.', edit_tacospot_path(@tacospot) if current_user %></td><br>
   <td><%= link_to 'This taco spot no longer exists.', tacospot_path, method: :delete, data: { confirm: 'Are you sure?' } if current_user %></td><br>
 </tr>
-
-<%= link_to "Show me ALL the tacos found!", tacospots_path %>
