@@ -2,6 +2,10 @@ class TacospotsController < ApplicationController
   before_action :set_tacospot, only: [:show, :edit, :update, :destroy]
   before_action :authorize, except: [:index, :show]
 
+  def new
+    @tacospot = Tacospot.new
+  end
+
   def index
     @tacospots = Tacospot.all
     @users = User.all
@@ -11,12 +15,9 @@ class TacospotsController < ApplicationController
     @tacospot = Tacospot.find(params[:id])
   end
 
-  def new
-    @tacospot = Tacospot.new
-  end
-
   def create
     @tacospot = Tacospot.new(tacospot_params)
+    @tacospot.user_id = current_user.id
     if @tacospot.save
       flash[:notice] = 'New Taco Spot!'
       redirect_to root_path
