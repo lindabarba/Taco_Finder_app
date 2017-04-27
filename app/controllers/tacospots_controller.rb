@@ -8,12 +8,7 @@ class TacospotsController < ApplicationController
 
   def index
     @tacospots = Tacospot.all
-    if params[:search]
-        @tacospots = Tacospot.search(params[:search])
-      else
-        @tacospots = Tacospot.all
-        @users = User.all
-    end
+    @users = User.all
   end
 
   def show
