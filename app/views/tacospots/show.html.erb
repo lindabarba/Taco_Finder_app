@@ -8,7 +8,19 @@
   <td><%= @tacospot.zip %></td><br>
   <td>Hours: <%= @tacospot.hours %></td>&nbsp;|&nbsp;
   <td>Cash only: <%= @tacospot.cash_only %></td><br>
-  <td><%= @tacospot.image_url %></td><br>
+  <div class="row">
+    <div class="col s12 m7">
+      <div class="card">
+        <div class="card-image">
+          <%= image_tag @tacospot.image_url %>
+        <span class="card-title">This is the title</span>
+        </div>
+        <div class="card-content">
+          <p>Blah blah caption.</p>
+        </div>
+      </div>
+    </div>
+  </div>
   <td><%= link_to 'Fix up this taco spot.', edit_tacospot_path(@tacospot) if current_user %></td><br>
   <td><%= link_to 'This taco spot no longer exists.', tacospot_path, method: :delete, data: { confirm: 'Are you sure?' } if current_user %></td><br>
 </tr>
