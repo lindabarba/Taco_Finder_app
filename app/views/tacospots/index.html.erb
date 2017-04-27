@@ -9,10 +9,19 @@
   <td><%= tacospot.zip %></td><br>
   <td>Hours: <%= tacospot.hours %></td>&nbsp;|&nbsp;
   <td>Cash only: <%= tacospot.cash_only %></td><br>
-  <td><%= tacospot.image_url %></td><br>
-  <td><%= link_to 'Something wrong? Fix it up here.', edit_tacospot_path(tacospot), method: :get if current_user %></td><br>
+  <div class="row">
+    <div class="col s6 m3">
+      <div class="card">
+        <div class="card-image">
+          <%= image_tag tacospot.image_url %>
+        <span class="card-title"><%= tacospot.name %></span>
+        </div>
+      </div>
+    </div>
+  </div>
+<!--   <td><%= link_to 'Something wrong? Fix it up here.', edit_tacospot_path(tacospot), method: :get if current_user %></td><br>
   <td><%= link_to 'Taco spot gone? Get rid of it here.', tacospot_path(tacospot), method: :delete, data: { confirm: 'Are you sure?' } if current_user %></td>
-</tr>
+ --></tr>
 <br>
 <hr>
 <br>
