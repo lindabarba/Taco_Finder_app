@@ -2,9 +2,8 @@
 <html>
   <head>
     <title>Taco Finder</title>
-    <%= stylesheet_link_tag "https://fonts.googleapis.com/icon?family=Material+Icons" %>
+    <%= stylesheet_link_tag "https://fonts.googleapis.com/css?family=Fresca" %>
     <%= csrf_meta_tags %>
-
     <%= favicon_link_tag '/taco-icon.ico' %>
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
@@ -14,26 +13,36 @@
     <div class="navbar-fixed">
       <nav>
         <div class="nav-wrapper">
-          <a href="/" class="brand-logo"><i class="material-icons">sentiment_very_satisfied</i>Taco Finder</a>
+          <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+          <a href="/" class="brand-logo center">Taco Finder<img src="/taco-nav.png"></a>
+            <ul class="left hide-on-med-and-down">
+              <li><%= link_to 'Show me all the Tacos', tacospots_path %></li>
+            </ul>
+            <ul class="right hide-on-med-and-down">
+              <li><% if current_user %>
+                    Welcome, <%= current_user.name %>
+                  <% end %></li>
+              <li><% if current_user %>
+                    <%= link_to 'Log out', session_path('dummy'), method: :delete %>
+                  <% end %></li>
+              <li><% if current_user == nil %>
+                    <%= link_to 'Enter Taco Finder', login_path %>
+                  <% end %></li>
+              <li><% if current_user == nil %>
+                    <%= link_to 'Join Taco Finder', new_user_path %>
+                  <% end %></li>
+            </ul>
         </div>
       </nav>
     </div>
     <div class="container">
-      <p>
-        <% if current_user %>
-          Welcome, <%= current_user.name %>
-          &nbsp;&nbsp;|&nbsp;&nbsp;
-          <%= link_to 'I no longer want you to know who I am', session_path('dummy'), method: :delete %><br>
-          <p><%= link_to 'Tell us about a new taco spot.', new_tacospot_path %></p>
-        <% else %>
-          <%= link_to 'Enter Taco Finder', login_path %>
-          &nbsp;&nbsp;|&nbsp;&nbsp;
-          <%= link_to 'Join Taco Finder', new_user_path %>
-        <% end %>
-      </p>
-      <p><%= link_to 'Show me all the Tacos', tacospots_path %></p>
       <%= yield %>
     </div>
+    <div class="col s12 m6"></div>
+    <br>
+    <br>
+    <br>
+    <br>
     <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
     <script type="text/javascript" src="app/assets/javascripts/materialize.min.js"></script>
   </body>
