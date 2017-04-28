@@ -1,24 +1,29 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+### Description
+Welcome to Taco Finder. This app is dedicated to listing locations of delicious tacos, crowd-sourced by you (and your ilk).
 
-Things you may want to cover:
+The site allows any taco lover to browse and discover taco spots. To create, edit, or remove a spot you must create an account.  
 
-* Ruby version
+<img src="http://i.imgur.com/IDCItld.png" width="250">  
 
-* System dependencies
+The app is hosted by Heroku [here](https://tacofinderla.herokuapp.com/). 
 
-* Configuration
+### Technology Implemented  
+* Ruby
+* Ruby on Rails 5
+* HTML 5
+* CSS 3
+* [Materialize](http://materializecss.com/) CSS framework
+* Javascript
+* jQuery
+* Sass
+* bcrypt
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+### Next Steps
+##### Planned Features
+* Commenting for users
+* Ratings
+* Additional photo upload opportunities
+* Tagging
+* Search
