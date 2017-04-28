@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Taco Finder</title>
+    <title>Taco Finder LA</title>
     <%= stylesheet_link_tag "https://fonts.googleapis.com/css?family=Fresca" %>
     <%= csrf_meta_tags %>
     <%= favicon_link_tag '/taco-icon.ico' %>
@@ -10,15 +10,17 @@
   </head>
 
   <body>
-    <div class="navbar-fixed">
-      <nav>
-        <div class="nav-wrapper">
-          <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
-          <a href="/" class="brand-logo center">Taco Finder<img src="/taco-nav.png"></a>
-            <ul class="left hide-on-med-and-down">
-              <li><%= link_to 'Show me all the Tacos', tacospots_path %></li>
+    <header>
+      <div class="navbar-fixed">
+        <nav>
+          <div class="nav-wrapper">
+            <ul class="left hide-on-small-and-down">
+              <li><%= link_to tacospots_path do %>
+                 <%= image_tag "/taco-nav.png" %>
+              <% end %></li>
             </ul>
-            <ul class="right hide-on-med-and-down">
+            <a href="/" class="brand-logo center">Taco Finder LA</a>
+            <ul class="right hide-on-small-and-down">
               <li><% if current_user %>
                     Welcome, <%= current_user.name %>
                   <% end %></li>
@@ -32,13 +34,13 @@
                     <%= link_to 'Join Taco Finder', new_user_path %>
                   <% end %></li>
             </ul>
-        </div>
-      </nav>
-    </div>
+          </div>
+        </nav>
+      </div>
+    </header>
     <div class="container">
       <%= yield %>
     </div>
-    <div class="col s12 m6"></div>
     <br>
     <br>
     <br>
