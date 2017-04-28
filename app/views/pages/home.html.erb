@@ -11,6 +11,7 @@
           <%= link_to "Take a look around", tacospots_path %>, find a taco spot, and then get going.</p>
       </div>
       <div class="z-depth-0" class="card-action">
+        <% if current_user %><%= link_to "Tell us about a new taco spot.", new_tacospot_path %><% end %><br>
         <% if current_user == nil %><%= link_to "Join to share your favorite taco spots.", new_user_path %><% end %><br>
         <% if current_user == nil %><%= link_to "Already joined? Log in!", login_path %><% end %>
       </div>
