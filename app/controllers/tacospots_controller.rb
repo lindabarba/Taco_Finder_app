@@ -12,7 +12,7 @@ class TacospotsController < ApplicationController
   end
 
   def show
-    @tacospot = Tacospot.find(params[:id])
+    @tacospot = set_tacospot
   end
 
   def create
@@ -27,11 +27,11 @@ class TacospotsController < ApplicationController
   end
 
   def edit
-    @tacospot = Tacospot.find(params[:id])
+    @tacospot = set_tacospot
   end
 
   def update
-    @tacospot = Tacospot.find(params[:id])
+    @tacospot = set_tacospot
     if @tacospot.update_attributes(tacospot_params)
       redirect_to tacospot_path
     else
@@ -40,7 +40,7 @@ class TacospotsController < ApplicationController
   end
 
   def destroy
-    @tacospot = Tacospot.find(params[:id])
+    @tacospot = set_tacospot
     @tacospot.destroy
     redirect_to tacospots_path
   end
