@@ -13,7 +13,7 @@ class UsersController < ApplicationController
     if @user.save
       session[:user_id] = @user.id
       flash[:notice] = "Welcome, you are in."
-      redirect_to root_path
+      redirect_to tacospots_path
     else
       render :new
     end

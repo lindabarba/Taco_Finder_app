@@ -1,4 +1,4 @@
-<h1>Add new Taco Spot!</h1>
+<h2>Add a new taco spot!</h2>
 
 <%= form_for @tacospot do |f| %>
 
@@ -26,11 +26,11 @@
    <%= f.label :image_url %>
    <%= f.text_field :image_url %><br>
 
-   <%= f.submit "Add taco spot" %>
+   <%= f.submit "Add taco spot!" %>
 
 <% end %>
-
-<%= link_to "Nah, changed my mind.", root_path %>
+<br>
+<p><%= link_to "Nah, changed my mind, take me back.", tacospots_path %></p>
 <br>
 <br>
 <br>

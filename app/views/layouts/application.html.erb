@@ -4,9 +4,9 @@
     <title>Taco Finder LA</title>
     <%= stylesheet_link_tag "https://fonts.googleapis.com/css?family=Fresca" %>
     <%= csrf_meta_tags %>
-    <%= favicon_link_tag '/taco-icon.ico' %>
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= favicon_link_tag "/taco-icon.ico" %>
+    <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track": "reload" %>
+    <%= javascript_include_tag "application", "data-turbolinks-track": "reload" %>
   </head>
 
   <body>
@@ -15,23 +15,23 @@
         <nav>
           <div class="nav-wrapper">
             <ul class="left hide-on-small-and-down">
-              <li><%= link_to tacospots_path do %>
+              <li><%= link_to root_path do %>
                  <%= image_tag "/taco-nav.png" %>
               <% end %></li>
             </ul>
-            <a href="/" class="brand-logo center">Taco Finder LA</a>
+            <li class="brand-logo center"><%= link_to "Taco Finder", tacospots_path %></li>
             <ul class="right hide-on-small-and-down">
               <li><% if current_user %>
                     Welcome, <%= current_user.name %>
                   <% end %></li>
               <li><% if current_user %>
-                    <%= link_to 'Log out', session_path('dummy'), method: :delete %>
+                    <%= link_to "Log out", session_path("dummy"), method: :delete %>
                   <% end %></li>
               <li><% if current_user == nil %>
-                    <%= link_to 'Enter Taco Finder', login_path %>
+                    <%= link_to "Enter Taco Finder", login_path %>
                   <% end %></li>
               <li><% if current_user == nil %>
-                    <%= link_to 'Join Taco Finder', new_user_path %>
+                    <%= link_to "Join Taco Finder", new_user_path %>
                   <% end %></li>
             </ul>
           </div>

@@ -7,7 +7,7 @@ class SessionsController < ApplicationController
     user = User.find_by(email: params[:email])
     if user && user.authenticate(params[:password])
       session[:user_id] = user.id
-      redirect_to root_path, notice: "You're in, welcome."
+      redirect_to tacospots_path, notice: "You're in, welcome."
     else
       flash.now.alert = "Something went wrong. Try again."
       render :new

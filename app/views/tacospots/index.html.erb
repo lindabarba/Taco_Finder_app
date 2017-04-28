@@ -1,29 +1,24 @@
-<h1>Tacos Found:</h1>
+<h2>Look at all these tacos!</h2>
 
 <% @tacospots.each do |tacospot| %>
-<tr>
-  <td><%= link_to tacospot.name, tacospot_path(tacospot) %></td><br>
-  <td><%= tacospot.street_address %>, </td><br>
-  <td><%= tacospot.city %>, </td>
-  <td><%= tacospot.state %>, </td>
-  <td><%= tacospot.zip %></td><br>
-  <td>Hours: <%= tacospot.hours %></td>&nbsp;|&nbsp;
-  <td>Cash only: <%= tacospot.cash_only %></td><br>
+
+<h3><%= link_to tacospot.name, tacospot_path(tacospot) %></h3>
   <div class="row">
-    <div class="col s6 m3">
+    <div class="col s9 m5">
       <div class="card">
         <div class="card-image">
           <%= image_tag tacospot.image_url %>
-        <span class="card-title"><%= tacospot.name %></span>
+        </div>
+        <div class="card-content">
+          <p><%= tacospot.street_address %></p>
+          <p><%= tacospot.city %>, <%= tacospot.state %>&nbsp;<%= tacospot.zip %></p>
+          <p>Hours: <%= tacospot.hours %></p>
+          <p>Cash only: <%= tacospot.cash_only %></p>
         </div>
       </div>
     </div>
   </div>
-  </tr>
 <br>
-<hr>
-<br>
-
 <% end %>
 <br>
 <br>

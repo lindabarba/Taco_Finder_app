@@ -1,29 +1,24 @@
-<h1><%= @tacospot.name %></h1>
+<h2><%= @tacospot.name %></h2>
 
-<tr>
-  <td><%= @tacospot.name %></td><br>
-  <td><%= @tacospot.street_address %>, </td><br>
-  <td><%= @tacospot.city %>, </td>
-  <td><%= @tacospot.state %>, </td>
-  <td><%= @tacospot.zip %></td><br>
-  <td>Hours: <%= @tacospot.hours %></td>&nbsp;|&nbsp;
-  <td>Cash only: <%= @tacospot.cash_only %></td><br>
-  <div class="row">
-    <div class="col s12 m7">
-      <div class="card">
-        <div class="card-image">
-          <%= image_tag @tacospot.image_url %>
-        <span class="card-title"><%= @tacospot.name %></span>
-        </div>
-<!--         <div class="card-content">
-          <p>Blah blah caption.</p>
-        </div>
- -->  </div>
+<div class="row">
+  <div class="col s12 m6">
+    <div class="card">
+      <div class="card-image">
+        <%= image_tag @tacospot.image_url %>
+      </div>
+      <div class="card-content">
+        <p><%= @tacospot.street_address %></p>
+        <p><%= @tacospot.city %>, <%= @tacospot.state %>&nbsp;<%= @tacospot.zip %></p>
+        <p>Hours: <%= @tacospot.hours %></p>
+        <p>Cash only: <%= @tacospot.cash_only %></p>
+      </div>
+      <div class="card-action">
+        <p><%= link_to "Fix up this taco spot", edit_tacospot_path(@tacospot) if current_user %></p>
+        <p><%= link_to "This taco spot no longer exists", tacospot_path, method: :delete, data: { confirm: "Are you sure?" } if current_user %></p>
+      </div>
     </div>
   </div>
-  <td><%= link_to 'Fix up this taco spot.', edit_tacospot_path(@tacospot) if current_user %></td><br>
-  <td><%= link_to 'This taco spot no longer exists.', tacospot_path, method: :delete, data: { confirm: 'Are you sure?' } if current_user %></td><br>
-</tr>
+</div>
 <br>
 <br>
 <br>

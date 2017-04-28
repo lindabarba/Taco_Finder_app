@@ -19,7 +19,7 @@ class TacospotsController < ApplicationController
     @tacospot = Tacospot.new(tacospot_params)
     @tacospot.user_id = current_user.id
     if @tacospot.save
-      flash[:notice] = 'New Taco Spot!'
+      flash[:notice] = "New Taco Spot!"
       redirect_to root_path
     else
       render :new
