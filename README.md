@@ -13,7 +13,7 @@ Responsive page:
 
 The app is hosted by Heroku [here](https://tacofinderla.herokuapp.com/).  
 
-More information on the development of the project can be found on [Trello] (https://trello.com/b/pF0i8byf/taco-finder-la-ga-wdi-44-project-2).
+More information on the development of the project can be found on [Trello](https://trello.com/b/pF0i8byf/taco-finder-la-ga-wdi-44-project-2).
 
 ### Technology Implemented  
 * Ruby
@@ -34,6 +34,7 @@ More information on the development of the project can be found on [Trello] (htt
 * Tagging
 * Search
 * Admin role for user management
+* Adjust links on home page
 
 ### Gratitude  
 Thanks to Jim, Jon, AJ, Jerry, and the WDI-44 class!
